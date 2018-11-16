@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Main </title>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" type="text/css" href = '{{url_for('static', filename = 'style.css')}}'>
+  </head>
+  <body>
+    <div class = "flash">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+        <li><strong>{{message}}</strong></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+    </div>
+
+    <div class = "main">
+      <h1> Main Page </h1>
+      <p>
+        this is main html
+      </p>
+    </div>
+    <div class = "sections">
+      <button type="button" onclick="window.location.href='{{url_for('showSignUp')}}';" class = "button"> Sign Up </button>
+      <button type="button" onclick="window.location.href='{{url_for('showSignIn')}}';" class = "button"> Sign In </button>
+    </div>
+
+
+  </body>
+</html>

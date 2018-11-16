@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Sign In </title>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" type="text/css" href = '{{url_for('static', filename = 'style.css')}}'>
+  </head>
+  <body>
+    <div class = "main">
+      <h1> Sign In Page </h1>
+      <p>
+        this is signIn html
+      </p>
+    </div>
+
+    <div class = "container">
+      <div class = "info">
+        <form action = "{{url_for('showSignIn')}}" method = "POST">
+          <p> ID </p>
+          <input type = 'text' style = 'height: 30px; width: 300px;' name = 'userID'> </p>
+          <p> PWD </p>
+          <input type = 'text' style = 'height: 30px; width: 300px;' name = 'userPWD'> </p>
+      </div>
+      <div class = "sections">
+        <input type = 'submit' value = 'Sign In' class = "button">
+        <button type="button" onclick="window.location.href='{{ url_for( 'showMain') }}';" class = "button">Cancel</button>
+      </div>
+    </div>
+  </body>
+</html>
